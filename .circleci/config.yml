@@ -38,3 +38,15 @@ workflows:
       - test:
           name: "running4"
           node-version: 11.9.0
+      - test:
+          name: "running5"
+          node-version: 11.9.0
+      - test:
+          name: "running6"
+          node-version: 11.9.0
+      - test:
+          name: "running7"
+          node-version: 11.9.0
+      - test:
+          name: "running8"
+          node-version: 11.9.0
