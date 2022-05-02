@@ -1,9 +1,11 @@
+---
+clone:
+  depth: 1
 kind: pipeline
-type: exec
-name: default
-
+name: pipe
 steps:
-- name: Sync Files (Main)
-  commands:
-  # Get the repo and build the HTML files
-  - lscpu
+  - name: build
+    image: archlinux:base-devel
+    image: panchajanya1999/archlinux:latest
+    commands:
+      - lscpu
