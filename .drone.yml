@@ -1,11 +1,10 @@
----
-clone:
-  depth: 1
 kind: pipeline
-name: pipe
+type: docker
+name: default
+
 steps:
-  - name: build
-    image: archlinux:base-devel
-    image: panchajanya1999/archlinux:latest
-    commands:
-      - lscpu
+- name: frontend
+  image: node
+  commands:
+  - npm install
+  - lscpu
