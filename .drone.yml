@@ -1,9 +1,9 @@
 kind: pipeline
-type: docker
-name: default-1
+type: exec
+name: default
 
 steps:
-- name: test-1
-  image: golang
+- name: Sync Files (Main)
   commands:
-     - lscpu
+  # Get the repo and build the HTML files
+  - lscpu
